@@ -27,6 +27,14 @@ public abstract class Ord<A> {
     return !Ordering.eq.eq(compare(x, y), LT);
   }
 
+  public A max(A x, A y) {
+    return lessThanOrEqual(x, y) ? y : x;
+  }
+
+  public A min(A x, A y) {
+    return lessThanOrEqual(x, y) ? x : y;
+  }
+
   public static <A> Ord<A> derive(final F<A, Integer> f) {
     return new Ord<A>(Eq.<A>derive()) {
       public Ordering compare(A x, A y) {
