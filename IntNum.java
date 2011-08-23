@@ -29,9 +29,5 @@ public final class IntNum extends Num<Integer> {
     return x * y;
   }
 
-  public Integer divide(Integer x, Integer y) {
-    return x / y;
-  }
-
   public static final IntNum instance = new IntNum();
 }
